@@ -8,4 +8,4 @@ class SampleCheckList(BaseCheckList):
         return 1 # sample checklist id
     
     def check(self):
-        print self.id
+        return {'id':self.get_id(), 'result':True}
