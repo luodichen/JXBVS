@@ -29,7 +29,7 @@ class KeyValueConfigParser(object):
     read_file_path = ""
     cur_key = ""
     cur_value = ""
-    status = STAT_PARSING_KEY
+    status = STAT_IN_BLANK_LINE
     result = {}
     
     def __init__(self, file_path):
