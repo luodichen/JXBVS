@@ -4,7 +4,7 @@ class BaseCheckPoint(object):
     id = 0
     
     def __init__(self):
-        object.__init__()
+        object.__init__(self)
         self.id = self.get_id()
     
     def get_id(self):
