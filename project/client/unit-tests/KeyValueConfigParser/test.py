@@ -1,8 +1,11 @@
-# encoding=utf-8
+#!python
 
 '''
 testing KeyValueConfigParser
 '''
+
+import sys
+sys.path.append("../../")
 from utils import KeyValueConfigParser
 
 kvcp = KeyValueConfigParser.KeyValueConfigParser("./login.defs")
