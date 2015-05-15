@@ -29,7 +29,7 @@ class W12200000001(BaseCheckPoint):
         result = None
         try:
             reg_key = _winreg.OpenKeyEx(_winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System")
-            value, type = _winreg.QueryValueEx(reg_key, "dontdisplaylastusername")
+            value, _ = _winreg.QueryValueEx(reg_key, "dontdisplaylastusername")
             result = (1 == value)
         except:
             pass
