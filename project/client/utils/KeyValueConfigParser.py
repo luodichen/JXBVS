@@ -240,9 +240,10 @@ class MethodKeyValueConfigParser(object):
         elif self.status == self.STAT_IN_ERROR:
             if '\n' == word or '\r' == word:
                 self.put_new_recode()
-                self.STAT_IN_BLANK_LINE
+                self.status = self.STAT_IN_BLANK_LINE
             else:
-                pass                            
+                pass
+                                     
                 
         
             
@@ -257,7 +258,9 @@ class MethodKeyValueConfigParser(object):
                 
                 for word in content:
                     self.parse(word)
+                    
         
+        #print self.result
         for tmpList in self.result:
             
             tmpMethod, tmpKey, tmpValue = map(None, tmpList)
