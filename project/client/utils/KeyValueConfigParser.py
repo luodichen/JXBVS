@@ -27,13 +27,12 @@ class KeyValueConfigParser(object):
     STAT_IN_COMMENT = 3
     STAT_IN_BLANK_LINE = 4
     
-    read_file_path = ""
-    cur_key = ""
-    cur_value = ""
-    status = STAT_IN_BLANK_LINE
-    result = {}
-    
     def __init__(self, file_path):
+        #read_file_path = ""
+        self.cur_key = ""
+        self.cur_value = ""
+        self.status = KeyValueConfigParser.STAT_IN_BLANK_LINE
+        self.result = {}
         self.read_file_path = file_path
         
     def put_new_record(self):
@@ -127,16 +126,14 @@ class MethodKeyValueConfigParser(object):
     STAT_IN_BLANK_LINE = 5                        #在（连续的）空行中
     STAT_IN_ERROR = 6           #遇到多个等于号
     
-    read_file_path = ""
-    status = STAT_IN_BLANK_LINE
-    blank_tag = 0   #
-    equal_num = 0 
-    result = []
-    cur_method = ""
-    cur_key = ""
-    cur_value = ""
-    
     def __init__(self, file_path):
+        self.status = KeyValueConfigParser.STAT_IN_BLANK_LINE
+        self.blank_tag = 0   #
+        self.equal_num = 0 
+        self.result = []
+        self.cur_method = ""
+        self.cur_key = ""
+        self.cur_value = ""
         self.read_file_path = file_path
     
     def put_new_recode(self):
